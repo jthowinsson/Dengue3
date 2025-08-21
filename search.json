@@ -40,6 +40,16 @@
     ]
   },
   {
+    "objectID": "Eda.html#cargue-de-datos",
+    "href": "Eda.html#cargue-de-datos",
+    "title": "3  Análisis Exploratorio de Datos",
+    "section": "",
+    "text": "3.1.1 Dataset\n\n\n3.1.2 Diccionario de variables\n\n\n\n\n\n\n\n\nVariables de interés\n\n\nObservaciones: 862\n\n\nVariable\nEtiqueta\nTipo\nFalt.\n%NA\nÚn.\nEjemplo\n\n\n\n\nFEC_NOT\nFec not\nPOSIXct\n0\n0.0\n314\n2020-04-22, 2020-09-06, 2020-03-25\n\n\nSEMANA\nSemana\nnumeric\n0\n0.0\n53\n17, 36, 12\n\n\nEDAD\nEdad\nnumeric\n0\n0.0\n81\n6, 15, 10\n\n\nSEXO\nSexo\ncharacter\n0\n0.0\n2\nF, M\n\n\nCOD_DPTO_O\nCod dpto o\nnumeric\n0\n0.0\n28\n76, 73, 13\n\n\nAREA\nArea\nnumeric\n0\n0.0\n3\n2, 1, 3\n\n\nTIP_SS\nTip ss\ncharacter\n0\n0.0\n5\nS, C, P\n\n\nESTRATO\nEstrato\nnumeric\n192\n22.3\n6\n1, 3, 2\n\n\nFEC_CON\nFec con\nPOSIXct\n0\n0.0\n308\n2020-04-22, 2020-09-05, 2020-03-18\n\n\nINI_SIN\nIni sin\nPOSIXct\n0\n0.0\n302\n2020-04-19, 2020-09-03, 2020-03-16\n\n\nPAC_HOS\nPac hos\nnumeric\n0\n0.0\n2\n1, 2\n\n\nFEC_HOS\nFec hos\nPOSIXct\n52\n6.0\n302\n2020-04-22, 2020-09-06, 2020-03-18",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Análisis Exploratorio de Datos</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
