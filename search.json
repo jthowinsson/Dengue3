@@ -52,41 +52,81 @@
   {
     "objectID": "MedidasFrecuencias.html",
     "href": "MedidasFrecuencias.html",
-    "title": "3  Medidas Frecuencias",
+    "title": "3  Medidas de Frecuencias",
     "section": "",
-    "text": "3.1 Tasa de Insidencia\n--- CÁLCULO DE TASA ---\n\n\nTasa de incidencia por 100,000 habitantes = 1.69",
+    "text": "3.1 Tasa de Insidencia",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas de Frecuencias</span>"
+    ]
+  },
+  {
+    "objectID": "MedidasFrecuencias.html#tasa-de-insidencia",
+    "href": "MedidasFrecuencias.html#tasa-de-insidencia",
+    "title": "3  Medidas de Frecuencias",
+    "section": "",
+    "text": "Cálculo y Significado de la Tasa de Incidencia\nLa tasa de incidencia es una de las medidas más importantes en epidemiología porque nos ayuda a entender el riesgo de que una enfermedad aparezca en una población durante un período de tiempo específico. A continuación, se detalla su cálculo y lo que significa el resultado.\n\nPaso 1: Definir los Datos Necesarios\n\nPara calcular la tasa, necesitamos dos datos clave:\n\nNúmero de Casos Nuevos: La cantidad total de personas que se enfermaron de dengue durante el período de estudio.\nDato: 862 casos nuevos en 2020.\nPoblación Total en Riesgo: El número total de habitantes en el lugar y período de estudio que podrían haberse enfermado.\nDato: 51,049,498 habitantes (población de Colombia proyectada para 2020 por el DANE).\nPaso 2: La Fórmula\n\nLa fórmula estándar para la tasa de incidencia es:\n\\[Tasa = \\frac{\\text{Número de Casos Nuevos}}{\\text{Población Total en Riesgo}} \\times \\text{Factor Multiplicador}\\]\nEl factor multiplicador (generalmente 1,000, 10,000 o 100,000) se usa para convertir el resultado en un número entero y fácil de interpretar. Para enfermedades a nivel nacional, es común usar 100,000.\n\nPaso 3: El Cálculo\n\nAhora, reemplazamos los datos en la fórmula:\nDividir los casos entre la población:\n\\[\\frac{862}{51,049,498} = 0.000016885\\]\nMultiplicar por el factor (100,000): 0.000016885 * 100,000 = 1.6885\nRedondear el resultado: ≈ 1.69\nEl resultado final es 1.69. Esto es lo que significa:\nDurante el año 2020, en Colombia se presentaron aproximadamente 1.69 casos nuevos de dengue por cada 100,000 habitantes.\nEsta cifra nos permite:\n-Medir el Riesgo: Cuantifica qué tan probable fue para una persona en Colombia contraer dengue ese año.\nHacer Comparaciones: Podemos comparar esta tasa con la de años anteriores para ver si la enfermedad está aumentando o disminuyendo, o compararla con la tasa de otros países para evaluar la situación de Colombia en un contexto más amplio.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas de Frecuencias</span>"
     ]
   },
   {
     "objectID": "MedidasFrecuencias.html#proporción-por-genero",
     "href": "MedidasFrecuencias.html#proporción-por-genero",
-    "title": "3  Medidas Frecuencias",
+    "title": "3  Medidas de Frecuencias",
     "section": "3.2 Proporción por Genero",
-    "text": "3.2 Proporción por Genero\n\n\n--- CÁLCULO DE PROPORCIÓN ---\n\n\nProporción de casos en mujeres = 53.8%",
+    "text": "3.2 Proporción por Genero\n\n\n--- CÁLCULO DE PROPORCIÓN ---\n\n\nProporción de casos en mujeres = 53.8% \n\n\n\n\n\n\n\n\n\n\nElgráfico de torta, titulado “Proporción de Casos de Dengue por Sexo”, muestra cómo se distribuyeron los casos de dengue entre hombres y mujeres durante el año 2020.\n\nMujeres (azul oscuro): Representaron la mayoría de los casos con un 53.8%.\nHombres (azul claro): Constituyeron el 46.2% restante de los casos.\n\nEn conclusión, el gráfico evidencia que hubo una ligera mayoría de casos de dengue en mujeres en comparación con los hombres durante ese año.\n\n3.3 Razon\n\n\nCÁLCULO DE RAZÓN \n\n\nRazón de casos Hombres:Mujeres = 0.86 \n\n\n\n\n\n\n\n\n\n\nElgráfico “Comparación de Casos de Dengue por Sexo”, presenta las cifras absolutas de los casos de dengue reportados en el año 2020, divididos entre el sexo femenino (F) y masculino (M).\nLa interpretación de los datos es la siguiente:\n\nCasos en Mujeres (F): Se reportaron 464 casos.\nCasos en Hombres (M): Se reportaron 398 casos.\n\nEl gráfico muestra visualmente que hubo más casos en mujeres que en hombres.\nAdicionalmente, en la esquina inferior derecha, se incluye la Razón Hombres:Mujeres = 0.86. Esto significa que por cada mujer con dengue, hubo 0.86 hombres con la enfermedad.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas de Frecuencias</span>"
     ]
   },
   {
     "objectID": "MedidasFrecuencias.html#razon",
     "href": "MedidasFrecuencias.html#razon",
-    "title": "3  Medidas Frecuencias",
+    "title": "3  Medidas de Frecuencias",
     "section": "3.3 Razon",
-    "text": "3.3 Razon\n\n\n--- CÁLCULO DE RAZÓN ---\n\n\nRazón de casos Hombres:Mujeres = 0.86",
+    "text": "3.3 Razon\n\n\nCÁLCULO DE RAZÓN \n\n\nRazón de casos Hombres:Mujeres = 0.86 \n\n\n\n\n\n\n\n\n\n\nElgráfico “Comparación de Casos de Dengue por Sexo”, presenta las cifras absolutas de los casos de dengue reportados en el año 2020, divididos entre el sexo femenino (F) y masculino (M).\nLa interpretación de los datos es la siguiente:\n\nCasos en Mujeres (F): Se reportaron 464 casos.\nCasos en Hombres (M): Se reportaron 398 casos.\n\nEl gráfico muestra visualmente que hubo más casos en mujeres que en hombres.\nAdicionalmente, en la esquina inferior derecha, se incluye la Razón Hombres:Mujeres = 0.86. Esto significa que por cada mujer con dengue, hubo 0.86 hombres con la enfermedad.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas de Frecuencias</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "4  Summary",
+    "objectID": "Inferencia.html",
+    "href": "Inferencia.html",
+    "title": "4  Inferencia",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "--- 1. RESULTADOS DE LA PRUEBA U DE MANN-WHITNEY (EDAD vs. SEXO) ---\n\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  EDAD by SEXO\nW = 86927, p-value = 0.1374\nalternative hypothesis: true location shift is not equal to 0\n\n\n\n--- Interpretación ---\n\n\nEl p-valor es 0.1374 (mayor o igual a 0.05), por lo que no podemos rechazar la hipótesis nula.\nNo hay evidencia suficiente para afirmar que exista una diferencia en la distribución de edades entre hombres y mujeres.\n\n\n\n--- 2. RESULTADOS DE LA PRUEBA DE KRUSKAL-WALLIS (EDAD vs. TIPO DE CASO) ---\n\n\n\n    Kruskal-Wallis rank sum test\n\ndata:  EDAD by TIP_CAS\nKruskal-Wallis chi-squared = 0.51392, df = 1, p-value = 0.4734\n\n\n\n--- Interpretación ---\n\n\nEl p-valor es 0.4734 (mayor o igual a 0.05), por lo que no podemos rechazar la hipótesis nula.\nNo hay evidencia suficiente para afirmar que la distribución de edades varíe según el tipo de caso de dengue.\n\n\n\n--- TABLA RESUMEN: MEDIANAS DE EDAD ---\n\n\n\nMediana de Edad por Tipo de Caso de Dengue\n\n\nTIP_CAS\nMediana_Edad\nN_Casos\n\n\n\n\n2\n12\n602\n\n\n3\n11\n260",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Inferencia</span>"
+    ]
+  },
+  {
+    "objectID": "Modelo.html",
+    "href": "Modelo.html",
+    "title": "5  Modelo de Regresión Logística para Predecir Severidad del Dengue",
+    "section": "",
+    "text": "5.1 Modelo Logístico para Predecir Dengue Grave\nSe presenta la formulación matemática del modelo logístico estimado.\n\\[\n\\beta = (\\beta_{0}, \\beta_{EDAD}, \\beta_{Sexo\\_M}, \\beta_{Area\\_2}, \\beta_{Area\\_3})^{T}\n\\]\ny su estimador:\n\\[\n\\hat{\\beta} = (\\hat{\\beta}_{0}, \\hat{\\beta}_{EDAD}, \\hat{\\beta}_{Sexo\\_M}, \\hat{\\beta}_{Area\\_2}, \\hat{\\beta}_{Area\\_3})^{T}\n\\] B) Matemáticamente, ¿Cuál es la probabilidad estimada de que un individuo pertenezca al grupo de “Dengue Grave” dado su edad, sexo y área de residencia?\n\\[\n\\hat{p}_{i} = P(DengueGrave = 1 \\mid EDAD_{i}, SEXO_{i}, AREA_{i})\n\\] Donde:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelo de Regresión Logística para Predecir Severidad del Dengue</span>"
+    ]
+  },
+  {
+    "objectID": "Modelo.html#modelo-logístico-para-predecir-dengue-grave",
+    "href": "Modelo.html#modelo-logístico-para-predecir-dengue-grave",
+    "title": "5  Modelo de Regresión Logística para Predecir Severidad del Dengue",
+    "section": "",
+    "text": "Matemátematicamente, el vector de parámetros logístico y el de su estimador.\n\n\nEl vector de parámetro y su estimador es, respectivamente:\n\n\n\n\n\nLa probabilidad estimada para un individuo \\(i\\) se escribe como:\n\n\n\n\\(EDAD_{i}\\), \\(SEXO_{i}\\) y \\(ÁREA_{i}\\) son valores especificos de las variables para ese individuo\n\n\n5.1.1 Mapeo de variables\n\n\n\nMapeo de la Variable SEXO\n\n\nVariable\nF (Referencia)\nM\n\n\n\n\nSEXO\n0\n1\n\n\n\n0\n0\n\n\n\n\n\n\nMapeo de la Variable AREA\n\n\nVariable\n1 (Referencia)\n2\n3\n\n\n\n\nAREA\n0\n0\n0\n\n\n\n0\n1\n0\n\n\n\n0\n0\n1\n\n\n\n\n\n\nModelo Logístico Estimado\n\nPrimero, definimos la combinación lineal de las variables para un individeuo \\(i\\)\n\\[\\text{logit}(\\hat{p}_{i}) = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}(EDAD_{i}) + \\hat{\\beta}_{2}(Sexo\\_M_{i}) + \\hat{\\beta}_{3}(Area\\_2_{i}) + \\hat{\\beta}_{4}(Area\\_3_{i})\\] El modelo estimado estimado se puede escribir teniendo en cuenta la ecuación del logit o la de la probabilidad:\n\nEn términos del logit:\n\n\\[\n\\text{logit}(\\hat{p}_{i}) := \\ln \\left( \\frac{\\hat{p}_{i}}{1 - \\hat{p}_{i}} \\right)\n= \\hat{\\beta}_{0} + \\hat{\\beta}_{1}(EDAD_{i}) + \\hat{\\beta}_{2}(Sexo\\_M_{i})\n+ \\hat{\\beta}_{3}(Area\\_2_{i}) + \\hat{\\beta}_{4}(Area\\_3_{i})\\]\n\nEn términos de la probabilidad (forma sigmoide):\n\n\\[\n\\hat{p}_{i} = \\frac{e^{\\hat{\\beta}_{0} + \\hat{\\beta}_{1}(EDAD_{i}) + \\hat{\\beta}_{2}(Sexo\\_M_{i})\n+ \\hat{\\beta}_{3}(Area\\_2_{i}) + \\hat{\\beta}_{4}(Area\\_3_{i})}}\n{1 + e^{\\hat{\\beta}_{0} + \\hat{\\beta}_{1}(EDAD_{i}) + \\hat{\\beta}_{2}(Sexo\\_M_{i})\n+ \\hat{\\beta}_{3}(Area\\_2_{i}) + \\hat{\\beta}_{4}(Area\\_3_{i})}}\\]\nExplicación de los Componentes:\n\nlogit(P(DengueGrave)): Esta es la parte principal de la regresión logística. Representa el logaritmo de los odds (probabilidades) de que un caso sea clasificado como “Dengue Grave”. Es la variable que estamos tratando de predecir.\n\\(\\beta_0\\) (Beta cero): Es el intercepto. Representa el logaritmo de los odds de tener dengue grave cuando todas las demás variables (edad, sexo, área) son cero o están en su categoría de referencia.\n\\(\\beta_1(\\text{EDAD})\\): Mide el efecto de la edad. El coeficiente \\(β₁\\) indica cuánto cambia el logaritmo de los odds de tener dengue grave por cada año que aumenta la edad del paciente.\n\\(\\beta_2(\\text{SEXO})\\): Mide el efecto del sexo. Como el sexo es una variable categórica (hombre/mujer), el modelo compara el riesgo de un grupo (ej. hombres) con el otro (mujeres, que sería la referencia).\n\\(\\beta_3(\\text{AREA})\\): Mide el efecto del área de residencia. Al igual que el sexo, compara el riesgo de las diferentes áreas con un área de referencia.\n\nEn resumen, el modelo combina la edad, el sexo y el área de residencia para calcular la probabilidad de que un paciente desarrolle la forma más severa de dengue.\n\n\n--- Estructura de los datos para el modelo ---\n\n\nRows: 862\nColumns: 5\n$ EDAD        &lt;dbl&gt; 6, 15, 6, 10, 5, 63, 10, 39, 10, 7, 8, 11, 30, 6, 14, 9, 7…\n$ SEXO        &lt;fct&gt; F, F, F, M, F, M, F, M, F, M, M, F, M, F, F, M, F, M, F, M…\n$ AREA        &lt;fct&gt; 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…\n$ TIP_CAS     &lt;dbl&gt; 3, 2, 2, 3, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 3…\n$ DengueGrave &lt;dbl&gt; 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1…\n\n\n\n--- RESUMEN DEL MODELO LOGÍSTICO ---\n\n\n\nResultados del Modelo de Regresión Logística\n\n\nterm\nOdds Ratio (OR)\nIC 2.5%\nIC 97.5%\np-valor\n\n\n\n\n(Intercept)\n0.479\n0.371\n0.615\n0.000\n\n\nEDAD\n0.997\n0.988\n1.005\n0.486\n\n\nSEXOM\n1.086\n0.809\n1.456\n0.583\n\n\nAREA2\n0.740\n0.424\n1.241\n0.268\n\n\nAREA3\n0.494\n0.271\n0.851\n0.015\n\n\n\n\n\n\n\n--- INTERPRETACIÓN DE LOS RESULTADOS ---\n\n\nLa tabla muestra los 'Odds Ratios' (OR) para cada variable. Un OR nos dice cómo cambian las 'probabilidades' de tener dengue grave por cada cambio en una variable, manteniendo las otras constantes.\n\n\n - **Intercepto (Intercept):** Es el valor base del modelo.\n\n\n - **EDAD:** Un OR cercano a 1 (en este caso, 1.002) y un p-valor alto (0.395) sugiere que la edad, por sí sola, no parece ser un factor de riesgo significativo para desarrollar dengue grave en este conjunto de datos.\n\n\n - **SEXOM (Sexo Masculino):** El OR de 0.686 significa que los hombres tienen un 31.4% (1 - 0.686) menos 'odds' (probabilidades) de tener dengue grave en comparación con las mujeres. Sin embargo, con un p-valor de 0.051, este resultado está en el límite de la significancia estadística.\n\n\n - **AREA (Rural y Urbana):** El modelo usa una categoría como referencia (en este caso, el Área 1). Los OR para las otras áreas se comparan con esa. Los p-valores altos sugieren que no hay diferencias significativas en el riesgo de dengue grave entre las distintas áreas de residencia.\n\n\n**Conclusión Principal:** Según este modelo, ninguna de las variables analizadas (edad, sexo, área) parece ser un predictor fuerte o estadísticamente significativo de la severidad del dengue en esta población, aunque el sexo masculino muestra una tendencia a tener un menor riesgo.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelo de Regresión Logística para Predecir Severidad del Dengue</span>"
+    ]
+  },
+  {
+    "objectID": "Modelo.html#gráfica-de-riesgo-probabilidad-estimada",
+    "href": "Modelo.html#gráfica-de-riesgo-probabilidad-estimada",
+    "title": "5  Modelo de Regresión Logística para Predecir Severidad del Dengue",
+    "section": "5.2 Gráfica de Riesgo (Probabilidad Estimada)",
+    "text": "5.2 Gráfica de Riesgo (Probabilidad Estimada)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelo de Regresión Logística para Predecir Severidad del Dengue</span>"
     ]
   },
   {

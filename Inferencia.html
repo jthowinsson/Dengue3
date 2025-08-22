@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jesús David Zamora Thowinsson (info.thowinsson@gmail.com)">
-<meta name="dcterms.date" content="2025-08-19">
 
-<title>Dengue</title>
+<title>4&nbsp; Inferencia – Dengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./Modelo.html" rel="next">
+<link href="./MedidasFrecuencias.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Inferencia.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -149,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Inferencia.html" class="sidebar-item-text sidebar-link">
+  <a href="./Inferencia.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></span></a>
   </div>
 </li>
@@ -170,40 +169,22 @@ document.addEventListener('DOMContentLoaded', function () {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dengue</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jesús David Zamora Thowinsson (info.thowinsson@gmail.com) </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 19, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -213,19 +194,76 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<div class="{#toc-imagen-container">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Portada2.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Mosquito Aedes aegypti</figcaption>
-</figure>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--- 1. RESULTADOS DE LA PRUEBA U DE MANN-WHITNEY (EDAD vs. SEXO) ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  EDAD by SEXO
+W = 86927, p-value = 0.1374
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- Interpretación ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El p-valor es 0.1374 (mayor o igual a 0.05), por lo que no podemos rechazar la hipótesis nula.
+No hay evidencia suficiente para afirmar que exista una diferencia en la distribución de edades entre hombres y mujeres.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- 2. RESULTADOS DE LA PRUEBA DE KRUSKAL-WALLIS (EDAD vs. TIPO DE CASO) ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Kruskal-Wallis rank sum test
+
+data:  EDAD by TIP_CAS
+Kruskal-Wallis chi-squared = 0.51392, df = 1, p-value = 0.4734</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- Interpretación ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El p-valor es 0.4734 (mayor o igual a 0.05), por lo que no podemos rechazar la hipótesis nula.
+No hay evidencia suficiente para afirmar que la distribución de edades varíe según el tipo de caso de dengue.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- TABLA RESUMEN: MEDIANAS DE EDAD ---</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Mediana de Edad por Tipo de Caso de Dengue</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">TIP_CAS</th>
+<th style="text-align: right;">Mediana_Edad</th>
+<th style="text-align: right;">N_Casos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">602</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">260</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 
@@ -711,10 +749,13 @@ toggle.addEventListener('click', () => {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./MedidasFrecuencias.html" class="pagination-link" aria-label="Medidas de Frecuencias">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Frecuencias</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Modelo.html" class="pagination-link" aria-label="Modelo de Regresión Logística para Predecir Severidad del Dengue">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelo de Regresión Logística para Predecir Severidad del Dengue</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

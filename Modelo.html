@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jesús David Zamora Thowinsson (info.thowinsson@gmail.com)">
-<meta name="dcterms.date" content="2025-08-19">
 
-<title>Dengue</title>
+<title>5&nbsp; Modelo de Regresión Logística para Predecir Severidad del Dengue – Dengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./Inferencia.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -86,6 +85,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -98,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Modelo.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelo de Regresión Logística para Predecir Severidad del Dengue</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -155,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modelo.html" class="sidebar-item-text sidebar-link">
+  <a href="./Modelo.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelo de Regresión Logística para Predecir Severidad del Dengue</span></span></a>
   </div>
 </li>
@@ -175,7 +203,11 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#modelo-logístico-para-predecir-dengue-grave" id="toc-modelo-logístico-para-predecir-dengue-grave" class="nav-link active" data-scroll-target="#modelo-logístico-para-predecir-dengue-grave"><span class="header-section-number">5.1</span> Modelo Logístico para Predecir Dengue Grave</a>
+  <ul class="collapse">
+  <li><a href="#mapeo-de-variables" id="toc-mapeo-de-variables" class="nav-link" data-scroll-target="#mapeo-de-variables"><span class="header-section-number">5.1.1</span> Mapeo de variables</a></li>
+  </ul></li>
+  <li><a href="#gráfica-de-riesgo-probabilidad-estimada" id="toc-gráfica-de-riesgo-probabilidad-estimada" class="nav-link" data-scroll-target="#gráfica-de-riesgo-probabilidad-estimada"><span class="header-section-number">5.2</span> Gráfica de Riesgo (Probabilidad Estimada)</a></li>
   </ul>
 </nav>
     </div>
@@ -184,26 +216,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dengue</h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelo de Regresión Logística para Predecir Severidad del Dengue</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jesús David Zamora Thowinsson (info.thowinsson@gmail.com) </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 19, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -213,14 +233,224 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<div class="{#toc-imagen-container">
-<div class="quarto-figure quarto-figure-center">
+<section id="modelo-logístico-para-predecir-dengue-grave" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="modelo-logístico-para-predecir-dengue-grave"><span class="header-section-number">5.1</span> Modelo Logístico para Predecir Dengue Grave</h2>
+<p>Se presenta la formulación matemática del modelo logístico estimado.</p>
+<ol type="A">
+<li><em>Matemátematicamente</em>, el vector de parámetros logístico y el de su estimador.</li>
+</ol>
+<ul>
+<li>El vector de parámetro y su estimador es, respectivamente:</li>
+</ul>
+<p><span class="math display">\[
+\beta = (\beta_{0}, \beta_{EDAD}, \beta_{Sexo\_M}, \beta_{Area\_2}, \beta_{Area\_3})^{T}
+\]</span></p>
+<p>y su estimador:</p>
+<p><span class="math display">\[
+\hat{\beta} = (\hat{\beta}_{0}, \hat{\beta}_{EDAD}, \hat{\beta}_{Sexo\_M}, \hat{\beta}_{Area\_2}, \hat{\beta}_{Area\_3})^{T}
+\]</span> B) Matemáticamente, ¿Cuál es la probabilidad estimada de que un individuo pertenezca al grupo de “Dengue Grave” dado su edad, sexo y área de residencia?</p>
+<ul>
+<li>La probabilidad estimada para un individuo <span class="math inline">\(i\)</span> se escribe como:</li>
+</ul>
+<p><span class="math display">\[
+\hat{p}_{i} = P(DengueGrave = 1 \mid EDAD_{i}, SEXO_{i}, AREA_{i})
+\]</span> Donde:</p>
+<ul>
+<li><span class="math inline">\(EDAD_{i}\)</span>, <span class="math inline">\(SEXO_{i}\)</span> y <span class="math inline">\(ÁREA_{i}\)</span> son valores especificos de las variables para ese individuo</li>
+</ul>
+<section id="mapeo-de-variables" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="mapeo-de-variables"><span class="header-section-number">5.1.1</span> Mapeo de variables</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Mapeo de la Variable SEXO</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">F (Referencia)</th>
+<th style="text-align: right;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">SEXO</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Mapeo de la Variable AREA</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">1 (Referencia)</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AREA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="3" type="A">
+<li><em>Modelo Logístico Estimado</em></li>
+</ol>
+<p><code>Primero</code>, definimos la combinación lineal de las variables para un individeuo <span class="math inline">\(i\)</span></p>
+<p><span class="math display">\[\text{logit}(\hat{p}_{i}) = \hat{\beta}_{0} + \hat{\beta}_{1}(EDAD_{i}) + \hat{\beta}_{2}(Sexo\_M_{i}) + \hat{\beta}_{3}(Area\_2_{i}) + \hat{\beta}_{4}(Area\_3_{i})\]</span> El modelo estimado estimado se puede escribir teniendo en cuenta la ecuación del logit o la de la probabilidad:</p>
+<ol type="1">
+<li><strong>En términos del logit:</strong></li>
+</ol>
+<p><span class="math display">\[
+\text{logit}(\hat{p}_{i}) := \ln \left( \frac{\hat{p}_{i}}{1 - \hat{p}_{i}} \right)
+= \hat{\beta}_{0} + \hat{\beta}_{1}(EDAD_{i}) + \hat{\beta}_{2}(Sexo\_M_{i})
++ \hat{\beta}_{3}(Area\_2_{i}) + \hat{\beta}_{4}(Area\_3_{i})\]</span></p>
+<ol start="2" type="1">
+<li><strong>En términos de la probabilidad (forma sigmoide):</strong></li>
+</ol>
+<p><span class="math display">\[
+\hat{p}_{i} = \frac{e^{\hat{\beta}_{0} + \hat{\beta}_{1}(EDAD_{i}) + \hat{\beta}_{2}(Sexo\_M_{i})
++ \hat{\beta}_{3}(Area\_2_{i}) + \hat{\beta}_{4}(Area\_3_{i})}}
+{1 + e^{\hat{\beta}_{0} + \hat{\beta}_{1}(EDAD_{i}) + \hat{\beta}_{2}(Sexo\_M_{i})
++ \hat{\beta}_{3}(Area\_2_{i}) + \hat{\beta}_{4}(Area\_3_{i})}}\]</span></p>
+<p>Explicación de los Componentes:</p>
+<ul>
+<li><p><em>logit(P(DengueGrave))</em>: Esta es la parte principal de la regresión logística. Representa el logaritmo de los odds (probabilidades) de que un caso sea clasificado como “Dengue Grave”. Es la variable que estamos tratando de predecir.</p></li>
+<li><p><span class="math inline">\(\beta_0\)</span> <em>(Beta cero)</em>: Es el intercepto. Representa el logaritmo de los odds de tener dengue grave cuando todas las demás variables (edad, sexo, área) son cero o están en su categoría de referencia.</p></li>
+<li><p><span class="math inline">\(\beta_1(\text{EDAD})\)</span>: Mide el efecto de la edad. El coeficiente <span class="math inline">\(β₁\)</span> indica cuánto cambia el logaritmo de los odds de tener dengue grave por cada año que aumenta la edad del paciente.</p></li>
+<li><p><span class="math inline">\(\beta_2(\text{SEXO})\)</span>: Mide el efecto del sexo. Como el sexo es una variable categórica (hombre/mujer), el modelo compara el riesgo de un grupo (ej. hombres) con el otro (mujeres, que sería la referencia).</p></li>
+<li><p><span class="math inline">\(\beta_3(\text{AREA})\)</span>: Mide el efecto del área de residencia. Al igual que el sexo, compara el riesgo de las diferentes áreas con un área de referencia.</p></li>
+</ul>
+<p>En resumen, el modelo combina la edad, el sexo y el área de residencia para calcular la probabilidad de que un paciente desarrolle la forma más severa de dengue.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Estructura de los datos para el modelo ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 862
+Columns: 5
+$ EDAD        &lt;dbl&gt; 6, 15, 6, 10, 5, 63, 10, 39, 10, 7, 8, 11, 30, 6, 14, 9, 7…
+$ SEXO        &lt;fct&gt; F, F, F, M, F, M, F, M, F, M, M, F, M, F, F, M, F, M, F, M…
+$ AREA        &lt;fct&gt; 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ TIP_CAS     &lt;dbl&gt; 3, 2, 2, 3, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 3…
+$ DengueGrave &lt;dbl&gt; 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1…</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+--- RESUMEN DEL MODELO LOGÍSTICO ---</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Resultados del Modelo de Regresión Logística</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">Odds Ratio (OR)</th>
+<th style="text-align: right;">IC 2.5%</th>
+<th style="text-align: right;">IC 97.5%</th>
+<th style="text-align: right;">p-valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.479</td>
+<td style="text-align: right;">0.371</td>
+<td style="text-align: right;">0.615</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EDAD</td>
+<td style="text-align: right;">0.997</td>
+<td style="text-align: right;">0.988</td>
+<td style="text-align: right;">1.005</td>
+<td style="text-align: right;">0.486</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SEXOM</td>
+<td style="text-align: right;">1.086</td>
+<td style="text-align: right;">0.809</td>
+<td style="text-align: right;">1.456</td>
+<td style="text-align: right;">0.583</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AREA2</td>
+<td style="text-align: right;">0.740</td>
+<td style="text-align: right;">0.424</td>
+<td style="text-align: right;">1.241</td>
+<td style="text-align: right;">0.268</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AREA3</td>
+<td style="text-align: right;">0.494</td>
+<td style="text-align: right;">0.271</td>
+<td style="text-align: right;">0.851</td>
+<td style="text-align: right;">0.015</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+
+--- INTERPRETACIÓN DE LOS RESULTADOS ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>La tabla muestra los 'Odds Ratios' (OR) para cada variable. Un OR nos dice cómo cambian las 'probabilidades' de tener dengue grave por cada cambio en una variable, manteniendo las otras constantes.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - **Intercepto (Intercept):** Es el valor base del modelo.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - **EDAD:** Un OR cercano a 1 (en este caso, 1.002) y un p-valor alto (0.395) sugiere que la edad, por sí sola, no parece ser un factor de riesgo significativo para desarrollar dengue grave en este conjunto de datos.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - **SEXOM (Sexo Masculino):** El OR de 0.686 significa que los hombres tienen un 31.4% (1 - 0.686) menos 'odds' (probabilidades) de tener dengue grave en comparación con las mujeres. Sin embargo, con un p-valor de 0.051, este resultado está en el límite de la significancia estadística.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - **AREA (Rural y Urbana):** El modelo usa una categoría como referencia (en este caso, el Área 1). Los OR para las otras áreas se comparan con esa. Los p-valores altos sugieren que no hay diferencias significativas en el riesgo de dengue grave entre las distintas áreas de residencia.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>**Conclusión Principal:** Según este modelo, ninguna de las variables analizadas (edad, sexo, área) parece ser un predictor fuerte o estadísticamente significativo de la severidad del dengue en esta población, aunque el sexo masculino muestra una tendencia a tener un menor riesgo.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="gráfica-de-riesgo-probabilidad-estimada" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="gráfica-de-riesgo-probabilidad-estimada"><span class="header-section-number">5.2</span> Gráfica de Riesgo (Probabilidad Estimada)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="images/Portada2.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Mosquito Aedes aegypti</figcaption>
+<p><img src="Modelo_files/figure-html/grafica-riesgo-modelo-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
+</div>
 </div>
 </div>
 
@@ -711,10 +941,13 @@ toggle.addEventListener('click', () => {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./Inferencia.html" class="pagination-link" aria-label="Inferencia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

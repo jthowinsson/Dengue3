@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Medidas Frecuencias – Dengue</title>
+<title>3&nbsp; Medidas de Frecuencias – Dengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./Inferencia.html" rel="next">
 <link href="./Eda.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,6 +85,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -97,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MedidasFrecuencias.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MedidasFrecuencias.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Frecuencias</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,13 +172,19 @@ document.addEventListener('DOMContentLoaded', function () {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./MedidasFrecuencias.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Frecuencias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./Inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Modelo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modelo de Regresión Logística para Predecir Severidad del Dengue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -170,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
   <li><a href="#tasa-de-insidencia" id="toc-tasa-de-insidencia" class="nav-link active" data-scroll-target="#tasa-de-insidencia"><span class="header-section-number">3.1</span> Tasa de Insidencia</a></li>
   <li><a href="#proporción-por-genero" id="toc-proporción-por-genero" class="nav-link" data-scroll-target="#proporción-por-genero"><span class="header-section-number">3.2</span> Proporción por Genero</a></li>
-  <li><a href="#razon" id="toc-razon" class="nav-link" data-scroll-target="#razon"><span class="header-section-number">3.3</span> Razon</a></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas de Frecuencias</span></h1>
 </div>
 
 
@@ -198,20 +232,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <section id="tasa-de-insidencia" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="tasa-de-insidencia"><span class="header-section-number">3.1</span> Tasa de Insidencia</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>--- CÁLCULO DE TASA ---</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Tasa de incidencia por 100,000 habitantes = 1.69 </code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="MedidasFrecuencias_files/figure-html/tasa-incidencia-1.png" class="img-fluid figure-img" width="768"></p>
-</figure>
-</div>
-</div>
+<div style="text-align: justify;">
+<p><em>Cálculo y Significado de la Tasa de Incidencia</em></p>
+<p>La tasa de incidencia es una de las medidas más importantes en epidemiología porque nos ayuda a entender el riesgo de que una enfermedad aparezca en una población durante un período de tiempo específico. A continuación, se detalla su cálculo y lo que significa el resultado.</p>
+<ul>
+<li><em>Paso 1: Definir los Datos Necesarios</em></li>
+</ul>
+<p>Para calcular la tasa, necesitamos dos datos clave:</p>
+<ul>
+<li><p>Número de Casos Nuevos: La cantidad total de personas que se enfermaron de dengue durante el período de estudio.</p></li>
+<li><p>Dato: 862 casos nuevos en 2020.</p></li>
+<li><p><em>Población Total en Riesgo</em>: El número total de habitantes en el lugar y período de estudio que podrían haberse enfermado.</p></li>
+<li><p>Dato: 51,049,498 habitantes (población de Colombia proyectada para 2020 por el DANE).</p></li>
+<li><p><em>Paso 2: La Fórmula</em></p></li>
+</ul>
+<p>La fórmula estándar para la tasa de incidencia es:</p>
+<p><span class="math display">\[Tasa = \frac{\text{Número de Casos Nuevos}}{\text{Población Total en Riesgo}} \times \text{Factor Multiplicador}\]</span></p>
+<p>El factor multiplicador (generalmente 1,000, 10,000 o 100,000) se usa para convertir el resultado en un número entero y fácil de interpretar. Para enfermedades a nivel nacional, es común usar 100,000.</p>
+<ul>
+<li><em>Paso 3: El Cálculo</em></li>
+</ul>
+<p>Ahora, reemplazamos los datos en la fórmula:</p>
+<p>Dividir los casos entre la población:</p>
+<p><span class="math display">\[\frac{862}{51,049,498} = 0.000016885\]</span></p>
+<p>Multiplicar por el factor (100,000): 0.000016885 * 100,000 = 1.6885</p>
+<p>Redondear el resultado: ≈ 1.69</p>
+<p>El resultado final es 1.69. Esto es lo que significa:</p>
+<p>Durante el año 2020, en Colombia se presentaron aproximadamente 1.69 casos nuevos de dengue por cada 100,000 habitantes.</p>
+<p>Esta cifra nos permite:</p>
+<p>-<em>Medir el Riesgo</em>: Cuantifica qué tan probable fue para una persona en Colombia contraer dengue ese año.</p>
+<p>Hacer Comparaciones: Podemos comparar esta tasa con la de años anteriores para ver si la enfermedad está aumentando o disminuyendo, o compararla con la tasa de otros países para evaluar la situación de Colombia en un contexto más amplio.</p>
 </div>
 </section>
 <section id="proporción-por-genero" class="level2" data-number="3.2">
@@ -231,12 +281,18 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 </div>
-</section>
+<div style="text-align: justify;">
+<p>Elgráfico de torta, titulado “Proporción de Casos de Dengue por Sexo”, muestra cómo se distribuyeron los casos de dengue entre hombres y mujeres durante el año 2020.</p>
+<ul>
+<li><p><em>Mujeres (azul oscuro)</em>: Representaron la mayoría de los casos con un 53.8%.</p></li>
+<li><p><em>Hombres (azul claro)</em>: Constituyeron el 46.2% restante de los casos.</p></li>
+</ul>
+<p>En conclusión, el gráfico evidencia que hubo una ligera mayoría de casos de dengue en mujeres en comparación con los hombres durante ese año.</p>
 <section id="razon" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="razon"><span class="header-section-number">3.3</span> Razon</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>--- CÁLCULO DE RAZÓN ---</code></pre>
+<pre><code>CÁLCULO DE RAZÓN </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Razón de casos Hombres:Mujeres = 0.86 </code></pre>
@@ -249,8 +305,20 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 </div>
+<div style="text-align: justify;">
+<p>Elgráfico “Comparación de Casos de Dengue por Sexo”, presenta las cifras absolutas de los casos de dengue reportados en el año 2020, divididos entre el sexo femenino (F) y masculino (M).</p>
+<p>La interpretación de los datos es la siguiente:</p>
+<ul>
+<li><p>Casos en Mujeres (F): Se reportaron 464 casos.</p></li>
+<li><p>Casos en Hombres (M): Se reportaron 398 casos.</p></li>
+</ul>
+<p>El gráfico muestra visualmente que hubo más casos en mujeres que en hombres.</p>
+<p>Adicionalmente, en la esquina inferior derecha, se incluye la Razón Hombres:Mujeres = 0.86. Esto significa que por cada mujer con dengue, hubo 0.86 hombres con la enfermedad.</p>
 
 
+</div>
+</section>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -742,8 +810,8 @@ toggle.addEventListener('click', () => {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Inferencia.html" class="pagination-link" aria-label="Inferencia">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Inferencia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
