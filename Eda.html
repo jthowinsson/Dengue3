@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Análisis Exploratorio de Datos – Dengue</title>
+<title>2&nbsp; Análisis Exploratorio de Datos – Dengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,18 +30,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./summary.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-14a4a47997ebddbd9d759ce704f2509b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,6 +85,35 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -97,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Eda.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Eda.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,14 +165,14 @@ document.addEventListener('DOMContentLoaded', function () {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./Eda.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Eda.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -162,10 +191,15 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#cargue-de-datos" id="toc-cargue-de-datos" class="nav-link active" data-scroll-target="#cargue-de-datos"><span class="header-section-number">3.1</span> Cargue de datos</a>
+  <li><a href="#cargue-de-datos" id="toc-cargue-de-datos" class="nav-link active" data-scroll-target="#cargue-de-datos"><span class="header-section-number">2.1</span> Cargue de datos</a>
   <ul class="collapse">
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">3.1.1</span> Dataset</a></li>
-  <li><a href="#diccionario-de-variables" id="toc-diccionario-de-variables" class="nav-link" data-scroll-target="#diccionario-de-variables"><span class="header-section-number">3.1.2</span> Diccionario de variables</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">2.1.1</span> Dataset</a></li>
+  </ul></li>
+  <li><a href="#visualización-de-datos-univariada" id="toc-visualización-de-datos-univariada" class="nav-link" data-scroll-target="#visualización-de-datos-univariada"><span class="header-section-number">2.2</span> Visualización de Datos Univariada</a>
+  <ul class="collapse">
+  <li><a href="#distribución-por-sexo" id="toc-distribución-por-sexo" class="nav-link" data-scroll-target="#distribución-por-sexo"><span class="header-section-number">2.2.1</span> Distribución por sexo</a></li>
+  <li><a href="#distribución-de-frecuencia-por-tipo-de-sexo" id="toc-distribución-de-frecuencia-por-tipo-de-sexo" class="nav-link" data-scroll-target="#distribución-de-frecuencia-por-tipo-de-sexo"><span class="header-section-number">2.2.2</span> Distribución de Frecuencia por tipo de sexo</a></li>
+  <li><a href="#casos-por-departamento" id="toc-casos-por-departamento" class="nav-link" data-scroll-target="#casos-por-departamento"><span class="header-section-number">2.2.3</span> Casos por Departamento</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -175,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></h1>
 </div>
 
 
@@ -192,43 +226,87 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<section id="cargue-de-datos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="cargue-de-datos"><span class="header-section-number">3.1</span> Cargue de datos</h2>
-<section id="dataset" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">3.1.1</span> Dataset</h3>
+<section id="cargue-de-datos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="cargue-de-datos"><span class="header-section-number">2.1</span> Cargue de datos</h2>
+<section id="dataset" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">2.1.1</span> Dataset</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 862 × 11
+   FEC_NOT      ANO SEMANA  EDAD SEXO  AREA   ESTRATO TIP_CAS CON_FIN
+   &lt;date&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt; &lt;fct&gt;    &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;  
+ 1 2020-04-22  2020     17     6 &lt;NA&gt;  Rural        1 3       1      
+ 2 2020-09-06  2020     36    15 &lt;NA&gt;  Urbana       3 2       1      
+ 3 2020-03-25  2020     12     6 &lt;NA&gt;  Urbana       2 2       1      
+ 4 2020-02-22  2020      8    10 &lt;NA&gt;  Urbana       3 3       1      
+ 5 2020-03-25  2020     13     5 &lt;NA&gt;  Urbana       2 2       1      
+ 6 2020-12-10  2020     49    63 &lt;NA&gt;  Urbana       3 2       1      
+ 7 2020-03-06  2020      9    10 &lt;NA&gt;  Rural        1 2       1      
+ 8 2020-10-22  2020     43    39 &lt;NA&gt;  Urbana      NA 3       1      
+ 9 2020-05-18  2020     20    10 &lt;NA&gt;  Urbana       1 3       1      
+10 2020-12-09  2020     49     7 &lt;NA&gt;  Urbana       2 3       1      
+# ℹ 852 more rows
+# ℹ 2 more variables: Departamento_ocurrencia &lt;chr&gt;, Municipio_ocurrencia &lt;chr&gt;</code></pre>
+</div>
+</div>
 </section>
-<section id="diccionario-de-variables" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="diccionario-de-variables"><span class="header-section-number">3.1.2</span> Diccionario de variables</h3>
+</section>
+<section id="visualización-de-datos-univariada" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="visualización-de-datos-univariada"><span class="header-section-number">2.2</span> Visualización de Datos Univariada</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="gfdlfmphct" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gfdlfmphct table {
+<div>
+<figure class="figure">
+<p><img src="Eda_files/figure-html/Histograma-Edad-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><em>Análisis de la Distribución de Casos de Dengue por Edad (Año 2020)</em></li>
+</ul>
+<div style="text-align: justify;">
+<p>El histograma presenta la distribución de frecuencias de los casos de dengue notificados en el año 2020, agrupados por rangos de edad. El eje horizontal (<span class="math inline">\(X\)</span>) representa la edad en años, mientras que el eje vertical (<span class="math inline">\(Y\)</span>) cuantifica el número de casos.</p>
+<p>El análisis del gráfico revela los siguientes puntos clave:</p>
+<ul>
+<li><p><em>Alta Incidencia en Grupos de Edad Temprana</em>: La mayor concentración de casos se observa en la población pediátrica y juvenil. Específicamente, el rango de edad con la frecuencia más alta se sitúa aproximadamente entre los 10 y 15 años, superando los 200 casos. Los rangos adyacentes, que abarcan desde la primera infancia hasta la adultez joven (aproximadamente 5 a 20 años), también muestran una incidencia significativamente elevada.</p></li>
+<li><p><em>Distribución Asimétrica Positiva (Sesgo a la Derecha)</em>: La distribución es marcadamente asimétrica. Después de alcanzar su punto máximo en la juventud, la frecuencia de casos desciende de manera pronunciada y sostenida a medida que aumenta la edad. Esto indica que la incidencia de la enfermedad es sustancialmente menor en la población adulta y adulta mayor.</p></li>
+<li><p><em>Baja Incidencia en la Población Adulta y Mayor</em>: A partir de los 25-30 años, el número de casos por cada rango de edad se reduce drásticamente, manteniéndose en niveles bajos y relativamente estables a lo largo de la vida adulta. En los grupos de edad más avanzada (mayores de 60 años), la frecuencia de casos es mínima, aproximándose a cero.</p></li>
+<li><p>Conclusión: El análisis de la distribución etaria para los casos de dengue en 2020 demuestra que los niños, adolescentes y adultos jóvenes constituyen el grupo demográfico con mayor vulnerabilidad a la enfermedad. Este patrón epidemiológico sugiere que las estrategias de salud pública, como las campañas de prevención y la vigilancia activa, deberían priorizar a estos grupos de edad para mitigar el impacto del dengue en la población.</p></li>
+</ul>
+</div>
+<section id="distribución-por-sexo" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="distribución-por-sexo"><span class="header-section-number">2.2.1</span> Distribución por sexo</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="vnleiwognf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vnleiwognf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gfdlfmphct thead, #gfdlfmphct tbody, #gfdlfmphct tfoot, #gfdlfmphct tr, #gfdlfmphct td, #gfdlfmphct th {
+#vnleiwognf thead, #vnleiwognf tbody, #vnleiwognf tfoot, #vnleiwognf tr, #vnleiwognf td, #vnleiwognf th {
   border-style: none;
 }
 
-#gfdlfmphct p {
+#vnleiwognf p {
   margin: 0;
   padding: 0;
 }
 
-#gfdlfmphct .gt_table {
+#vnleiwognf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: 820px;
+  width: auto;
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
@@ -243,14 +321,14 @@ document.addEventListener('DOMContentLoaded', function () {
   border-left-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_caption {
+#vnleiwognf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gfdlfmphct .gt_title {
+#vnleiwognf .gt_title {
   color: #333333;
-  font-size: 14px;
+  font-size: 125%;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -260,9 +338,9 @@ document.addEventListener('DOMContentLoaded', function () {
   border-bottom-width: 0;
 }
 
-#gfdlfmphct .gt_subtitle {
+#vnleiwognf .gt_subtitle {
   color: #333333;
-  font-size: 11px;
+  font-size: 85%;
   font-weight: initial;
   padding-top: 3px;
   padding-bottom: 5px;
@@ -272,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-top-width: 0;
 }
 
-#gfdlfmphct .gt_heading {
+#vnleiwognf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -284,13 +362,13 @@ document.addEventListener('DOMContentLoaded', function () {
   border-right-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_bottom_border {
+#vnleiwognf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_col_headings {
+#vnleiwognf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -305,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-right-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_col_heading {
+#vnleiwognf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -318,14 +396,14 @@ document.addEventListener('DOMContentLoaded', function () {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: bottom;
-  padding-top: 2px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 6px;
   padding-left: 5px;
   padding-right: 5px;
   overflow-x: hidden;
 }
 
-#gfdlfmphct .gt_column_spanner_outer {
+#vnleiwognf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -337,31 +415,31 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 4px;
 }
 
-#gfdlfmphct .gt_column_spanner_outer:first-child {
+#vnleiwognf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gfdlfmphct .gt_column_spanner_outer:last-child {
+#vnleiwognf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gfdlfmphct .gt_column_spanner {
+#vnleiwognf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
   vertical-align: bottom;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
 }
 
-#gfdlfmphct .gt_spanner_row {
+#vnleiwognf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gfdlfmphct .gt_group_heading {
+#vnleiwognf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -387,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
   text-align: left;
 }
 
-#gfdlfmphct .gt_empty_group_heading {
+#vnleiwognf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -402,17 +480,17 @@ document.addEventListener('DOMContentLoaded', function () {
   vertical-align: middle;
 }
 
-#gfdlfmphct .gt_from_md > :first-child {
+#vnleiwognf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gfdlfmphct .gt_from_md > :last-child {
+#vnleiwognf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gfdlfmphct .gt_row {
-  padding-top: 2px;
-  padding-bottom: 2px;
+#vnleiwognf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -429,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function () {
   overflow-x: hidden;
 }
 
-#gfdlfmphct .gt_stub {
+#vnleiwognf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -442,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 5px;
 }
 
-#gfdlfmphct .gt_stub_row_group {
+#vnleiwognf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -456,15 +534,15 @@ document.addEventListener('DOMContentLoaded', function () {
   vertical-align: top;
 }
 
-#gfdlfmphct .gt_row_group_first td {
+#vnleiwognf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gfdlfmphct .gt_row_group_first th {
+#vnleiwognf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gfdlfmphct .gt_summary_row {
+#vnleiwognf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -474,16 +552,16 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 5px;
 }
 
-#gfdlfmphct .gt_first_summary_row {
+#vnleiwognf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_first_summary_row.thick {
+#vnleiwognf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gfdlfmphct .gt_last_summary_row {
+#vnleiwognf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -493,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-bottom-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_grand_summary_row {
+#vnleiwognf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -503,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 5px;
 }
 
-#gfdlfmphct .gt_first_grand_summary_row {
+#vnleiwognf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -513,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-top-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_last_grand_summary_row_top {
+#vnleiwognf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -523,11 +601,11 @@ document.addEventListener('DOMContentLoaded', function () {
   border-bottom-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_striped {
+#vnleiwognf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gfdlfmphct .gt_table_body {
+#vnleiwognf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -536,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-bottom-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_footnotes {
+#vnleiwognf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -550,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-right-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_footnote {
+#vnleiwognf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -559,7 +637,7 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 5px;
 }
 
-#gfdlfmphct .gt_sourcenotes {
+#vnleiwognf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -573,7 +651,7 @@ document.addEventListener('DOMContentLoaded', function () {
   border-right-color: #D3D3D3;
 }
 
-#gfdlfmphct .gt_sourcenote {
+#vnleiwognf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -581,72 +659,72 @@ document.addEventListener('DOMContentLoaded', function () {
   padding-right: 5px;
 }
 
-#gfdlfmphct .gt_left {
+#vnleiwognf .gt_left {
   text-align: left;
 }
 
-#gfdlfmphct .gt_center {
+#vnleiwognf .gt_center {
   text-align: center;
 }
 
-#gfdlfmphct .gt_right {
+#vnleiwognf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gfdlfmphct .gt_font_normal {
+#vnleiwognf .gt_font_normal {
   font-weight: normal;
 }
 
-#gfdlfmphct .gt_font_bold {
+#vnleiwognf .gt_font_bold {
   font-weight: bold;
 }
 
-#gfdlfmphct .gt_font_italic {
+#vnleiwognf .gt_font_italic {
   font-style: italic;
 }
 
-#gfdlfmphct .gt_super {
+#vnleiwognf .gt_super {
   font-size: 65%;
 }
 
-#gfdlfmphct .gt_footnote_marks {
+#vnleiwognf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gfdlfmphct .gt_asterisk {
+#vnleiwognf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gfdlfmphct .gt_indent_1 {
+#vnleiwognf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gfdlfmphct .gt_indent_2 {
+#vnleiwognf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gfdlfmphct .gt_indent_3 {
+#vnleiwognf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gfdlfmphct .gt_indent_4 {
+#vnleiwognf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gfdlfmphct .gt_indent_5 {
+#vnleiwognf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gfdlfmphct .katex-display {
+#vnleiwognf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gfdlfmphct div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vnleiwognf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -654,129 +732,36 @@ document.addEventListener('DOMContentLoaded', function () {
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="7" class="gt_heading gt_title gt_font_normal"><strong>Variables de interés</strong></th>
+<th colspan="4" class="gt_heading gt_title gt_font_normal">Tabla 2: Distribución de Casos de Dengue por Sexo</th>
 </tr>
 <tr class="gt_heading even">
-<th colspan="7" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Observaciones: <strong>862</strong></th>
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Año 2020</th>
 </tr>
 <tr class="gt_col_headings header">
-<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
-<th id="Etiqueta" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Etiqueta</th>
-<th id="Tipo" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Tipo</th>
-<th id="Faltantes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Falt.</th>
-<th id="a%-NA" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">%NA</th>
-<th id="aÚnicos" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Ún.</th>
-<th id="Ejemplo" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Ejemplo</th>
+<th id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="SEXO" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SEXO</th>
+<th id="Frecuencia" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Frecuencia</th>
+<th id="Porcentaje" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Porcentaje</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="Variable">FEC_NOT</td>
-<td class="gt_row gt_left" headers="Etiqueta">Fec not</td>
-<td class="gt_row gt_left" headers="Tipo">POSIXct</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">314</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">2020-04-22, 2020-09-06, 2020-03-25</td>
+<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_left" headers="stub_1_1 SEXO">F</td>
+<td class="gt_row gt_right" headers="stub_1_1 Frecuencia">464</td>
+<td class="gt_row gt_right" headers="stub_1_1 Porcentaje">53.8%</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">SEMANA</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Semana</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">numeric</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">0</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">53</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">17, 36, 12</td>
+<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row"></td>
+<td class="gt_row gt_left" headers="stub_1_2 SEXO">M</td>
+<td class="gt_row gt_right" headers="stub_1_2 Frecuencia">398</td>
+<td class="gt_row gt_right" headers="stub_1_2 Porcentaje">46.2%</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Variable">EDAD</td>
-<td class="gt_row gt_left" headers="Etiqueta">Edad</td>
-<td class="gt_row gt_left" headers="Tipo">numeric</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">81</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">6, 15, 10</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">SEXO</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Sexo</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">character</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">0</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">2</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">F, M</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Variable">COD_DPTO_O</td>
-<td class="gt_row gt_left" headers="Etiqueta">Cod dpto o</td>
-<td class="gt_row gt_left" headers="Tipo">numeric</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">28</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">76, 73, 13</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">AREA</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Area</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">numeric</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">0</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">3</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">2, 1, 3</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Variable">TIP_SS</td>
-<td class="gt_row gt_left" headers="Etiqueta">Tip ss</td>
-<td class="gt_row gt_left" headers="Tipo">character</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">5</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">S, C, P</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">ESTRATO</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Estrato</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">numeric</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">192</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #2F6AF4; color: #FFFFFF">22.3</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">6</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">1, 3, 2</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Variable">FEC_CON</td>
-<td class="gt_row gt_left" headers="Etiqueta">Fec con</td>
-<td class="gt_row gt_left" headers="Tipo">POSIXct</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">308</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">2020-04-22, 2020-09-05, 2020-03-18</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">INI_SIN</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Ini sin</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">POSIXct</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">0</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">302</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">2020-04-19, 2020-09-03, 2020-03-16</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Variable">PAC_HOS</td>
-<td class="gt_row gt_left" headers="Etiqueta">Pac hos</td>
-<td class="gt_row gt_left" headers="Tipo">numeric</td>
-<td class="gt_row gt_right" headers="Faltantes">0</td>
-<td class="gt_row gt_right" headers="% NA" style="background-color: #F0F4FF; color: #000000">0.0</td>
-<td class="gt_row gt_right" headers="Únicos">2</td>
-<td class="gt_row gt_left" headers="Ejemplo" style="white-space: normal">1, 2</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left gt_striped" headers="Variable">FEC_HOS</td>
-<td class="gt_row gt_left gt_striped" headers="Etiqueta">Fec hos</td>
-<td class="gt_row gt_left gt_striped" headers="Tipo">POSIXct</td>
-<td class="gt_row gt_right gt_striped" headers="Faltantes">52</td>
-<td class="gt_row gt_right gt_striped" headers="% NA" style="background-color: #C4D6FF; color: #000000">6.0</td>
-<td class="gt_row gt_right gt_striped" headers="Únicos">302</td>
-<td class="gt_row gt_left gt_striped" headers="Ejemplo" style="white-space: normal">2020-04-22, 2020-09-06, 2020-03-18</td>
+<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">Total</td>
+<td class="gt_row gt_left gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 SEXO">—</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Frecuencia">862</td>
+<td class="gt_row gt_right gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Porcentaje">—</td>
 </tr>
 </tbody>
 </table>
@@ -784,8 +769,657 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 </div>
 </div>
+<div style="text-align: justify;">
+<p>La Tabla 2 muestra cómo se distribuyeron los casos de dengue según el sexo de los pacientes durante el año 2020.</p>
+<ul>
+<li><p>Total de Casos: Se registraron un total de 862 casos de dengue en ese año.</p></li>
+<li><p><em>Casos en Mujeres</em>: El sexo femenino (F) presentó una mayor cantidad de casos, con 464, lo que representa el 53.8% del total.</p></li>
+<li><p><em>Casos en Hombres</em>: El sexo masculino (M) tuvo 398 casos, equivalentes al 46.2% del total.</p></li>
+</ul>
+<p>En conclusión, la tabla indica que en 2020 hubo una incidencia ligeramente mayor de dengue en mujeres que en hombres.</p>
+</div>
+</section>
+<section id="distribución-de-frecuencia-por-tipo-de-sexo" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="distribución-de-frecuencia-por-tipo-de-sexo"><span class="header-section-number">2.2.2</span> Distribución de Frecuencia por tipo de sexo</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Eda_files/figure-html/grafico-sexo-profesional-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="text-align: justify;">
+<p>El gráfico de barras compara la cantidad de casos de dengue reportados entre mujeres y hombres durante el año 2020.</p>
+<ul>
+<li><p><em>Predominio Femenino</em>: El gráfico muestra que hubo una mayor cantidad de casos en el sexo femenino. Las mujeres (F) representaron el 53.8% del total de los casos.</p></li>
+<li><p><em>Casos Masculinos</em>: Los hombres (M) constituyeron el 46.2% de los casos.</p></li>
+</ul>
+<p>En resumen, la gráfica indica que en 2020, las mujeres fueron ligeramente más afectadas por el dengue que los hombres.</p>
+</div>
+</section>
+<section id="casos-por-departamento" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="casos-por-departamento"><span class="header-section-number">2.2.3</span> Casos por Departamento</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Eda_files/figure-html/Barras-Departamento-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="text-align: justify;">
+<p>Este gráfico de barras muestra los 10 departamentos de Colombia con el mayor número de casos de dengue reportados durante el año 2020.</p>
+<ul>
+<li><p><em>Liderazgo de Valle</em>: El departamento del Valle fue, por un amplio margen, el más afectado, con un total de 252 casos.</p></li>
+<li><p><em>Gran Diferencia</em>: La cifra del Valle es más del doble que la del segundo departamento, Huila, que registró 121 casos.</p></li>
+<li><p><em>Resto del Top 5</em>: Después de Huila, le siguen Bolívar con 71 casos, Magdalena con 55 y Sucre con 50.</p></li>
+</ul>
+<p>Tendencia General: El gráfico muestra una concentración muy alta de la enfermedad en el departamento del Valle en comparación con el resto de los departamentos listados.</p>
+<section id="mapa-dengue" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="mapa-dengue"><span class="header-section-number">2.2.4</span> Mapa Dengue</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Eda_files/figure-html/mapa-profesional-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="text-align: justify;">
+<p>El mapa coroplético que ilustra la distribución geográfica de los casos de dengue por departamento en Colombia durante el año 2020.</p>
+<ul>
+<li><p><em>Cómo leer el mapa</em>: Cada departamento está coloreado según el número de casos de dengue reportados. Como indica la leyenda, los colores más oscuros (azul intenso) representan un mayor número de casos, mientras que los colores más claros (azul pálido o gris) indican una baja incidencia.</p></li>
+<li><p><em>Foco principal de la enfermedad</em>: El mapa muestra claramente que la mayor concentración de casos se encuentra en el suroccidente del país. Hay un departamento en particular, coloreado con el azul más oscuro, que representa el principal foco de la enfermedad en 2020 (corresponde al departamento del Valle, como vimos en el gráfico de barras anterior).</p></li>
+<li><p><em>Otras zonas afectadas</em>: La región Andina y la región Caribe también presentan una incidencia notable, con varios departamentos en tonos de azul intermedio.</p></li>
+<li><p><em>Zonas con baja incidencia</em>: En contraste, la vasta región oriental del país (la Orinoquía y la Amazonía) muestra muy pocos o ningún caso reportado, apareciendo en colores muy claros o grises.</p></li>
+</ul>
+<p>En resumen, el mapa revela que la carga del dengue en Colombia durante 2020 no fue homogénea, sino que se concentró fuertemente en la región suroccidental y, en menor medida, en las regiones Andina y Caribe.</p>
+</div>
+</section>
+<section id="casos-de-dengue-a-lo-largo-del-tiempo" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="casos-de-dengue-a-lo-largo-del-tiempo"><span class="header-section-number">2.2.5</span> Casos de Dengue a lo Largo del Tiempo</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Eda_files/figure-html/Serie-Tiempo-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="text-align: justify;">
+<p>El gráfico muestra la evolución del número de casos de dengue a lo largo de las 52 semanas epidemiológicas del año 2020.</p>
+<ul>
+<li><p><em>Inicio de Año (Brote Principal)</em>: El año comenzó con una alta incidencia de dengue. Se observa un pico muy pronunciado alrededor de la semana 6 (mediados de febrero), donde se reportaron más de 40 casos semanales. Esto indica el momento de mayor transmisión de la enfermedad durante el año.</p></li>
+<li><p><em>Tendencia a la Baja</em>: Después de este pico, el número de casos comenzó a descender de forma general hasta aproximadamente la mitad del año (semana 28-30).</p></li>
+<li><p><em>Segunda Mitad del Año (Nivel Endémico)</em>: Desde la semana 30 en adelante, la cantidad de casos se estabilizó en un nivel mucho más bajo, fluctuando generalmente entre 5 y 15 casos por semana. Esto sugiere que la transmisión se mantuvo en un nivel bajo pero constante.</p></li>
+</ul>
+<p>En resumen, el gráfico evidencia un brote significativo de dengue en los primeros dos meses de 2020, seguido por una disminución y estabilización de los casos a niveles más bajos durante el resto del año.</p>
+</div>
+</section>
+<section id="tabla-cruzada" class="level3" data-number="2.2.6">
+<h3 data-number="2.2.6" class="anchored" data-anchor-id="tabla-cruzada"><span class="header-section-number">2.2.6</span> Tabla Cruzada</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="gujjtausdi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gujjtausdi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gujjtausdi thead, #gujjtausdi tbody, #gujjtausdi tfoot, #gujjtausdi tr, #gujjtausdi td, #gujjtausdi th {
+  border-style: none;
+}
+
+#gujjtausdi p {
+  margin: 0;
+  padding: 0;
+}
+
+#gujjtausdi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gujjtausdi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gujjtausdi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gujjtausdi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gujjtausdi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gujjtausdi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gujjtausdi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gujjtausdi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gujjtausdi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gujjtausdi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gujjtausdi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gujjtausdi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gujjtausdi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gujjtausdi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gujjtausdi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujjtausdi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gujjtausdi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gujjtausdi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gujjtausdi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujjtausdi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gujjtausdi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujjtausdi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gujjtausdi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujjtausdi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gujjtausdi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujjtausdi .gt_left {
+  text-align: left;
+}
+
+#gujjtausdi .gt_center {
+  text-align: center;
+}
+
+#gujjtausdi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gujjtausdi .gt_font_normal {
+  font-weight: normal;
+}
+
+#gujjtausdi .gt_font_bold {
+  font-weight: bold;
+}
+
+#gujjtausdi .gt_font_italic {
+  font-style: italic;
+}
+
+#gujjtausdi .gt_super {
+  font-size: 65%;
+}
+
+#gujjtausdi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gujjtausdi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gujjtausdi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gujjtausdi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gujjtausdi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gujjtausdi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gujjtausdi .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gujjtausdi .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gujjtausdi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Tabla 3: Asociación entre el Área de Residencia y el Tipo de Caso de Dengue</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="2" id="level 1; stat_1" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>TIP_CAS</strong>
+</div></th>
+<th rowspan="2" id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Total</strong></th>
+<th rowspan="2" id="p.value" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="stat_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">2</th>
+<th id="stat_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">3</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Área de Residencia</td>
+<td class="gt_row gt_center" headers="stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value">0.024</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="stat_1">474 (68%)</td>
+<td class="gt_row gt_center" headers="stat_2">224 (32%)</td>
+<td class="gt_row gt_center" headers="stat_0">698 (100%)</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;2</td>
+<td class="gt_row gt_center" headers="stat_1">58 (74%)</td>
+<td class="gt_row gt_center" headers="stat_2">20 (26%)</td>
+<td class="gt_row gt_center" headers="stat_0">78 (100%)</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="stat_1">70 (81%)</td>
+<td class="gt_row gt_center" headers="stat_2">16 (19%)</td>
+<td class="gt_row gt_center" headers="stat_0">86 (100%)</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Total</td>
+<td class="gt_row gt_center" headers="stat_1">602 (70%)</td>
+<td class="gt_row gt_center" headers="stat_2">260 (30%)</td>
+<td class="gt_row gt_center" headers="stat_0">862 (100%)</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Pearson’s Chi-squared test</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div style="text-align: justify;">
+<p>Analiza si existe una relación entre el lugar donde vive una persona y el tipo de dengue que contrae.</p>
+<ol type="1">
+<li>¿Qué se está comparando? Filas (Área de Residencia): Muestra los casos de dengue divididos en tres áreas geográficas diferentes (etiquetadas como 1, 2 y 3).</li>
+</ol>
+<ul>
+<li><em>Columnas (TIP_CAS)</em>: Clasifica los casos de dengue en dos tipos (etiquetados como 2 y 3). Generalmente, en la vigilancia epidemiológica, estos números representan diferentes niveles de severidad (por ejemplo, “Dengue con signos de alarma” y “Dengue grave”).</li>
+</ul>
+<ol start="2" type="1">
+<li>¿Cuál es el resultado principal? El dato más importante es el p-value = 0.024.</li>
+</ol>
+<p>En estadística, se suele usar un umbral de 0.05. Si el p-valor es menor que 0.05, se considera que el resultado es estadísticamente significativo.</p>
+<p>Como 0.024 es menor que 0.05, podemos concluir que existe una asociación real y estadísticamente significativa entre el área de residencia y el tipo de dengue.</p>
+<ol start="3" type="1">
+<li>¿Qué significa esa “asociación”? Significa que la distribución de los tipos de dengue no es la misma en las tres áreas de residencia. La probabilidad de tener un tipo de dengue u otro parece depender del área en la que vive la persona.</li>
+</ol>
+<p>Por ejemplo, si observamos los porcentajes:</p>
+<ul>
+<li><p>En el Área 3, el 81% de los casos son del tipo 2 y solo el 19% son del tipo 3.</p></li>
+<li><p>En el Área 1, la proporción es diferente: 68% son del tipo 2 y 32% son del tipo 3.</p></li>
+</ul>
+<p>Esta diferencia en las proporciones es lo que la prueba estadística (Chi-cuadrado de Pearson) ha detectado como “significativa”.</p>
+<p>En resumen: La tabla demuestra con evidencia estadística que el lugar de residencia es un factor que está asociado a la severidad o al tipo de dengue que presentan los pacientes.</p>
+</div>
 
 
+</section>
+</div>
 </section>
 </section>
 
@@ -1273,13 +1907,13 @@ toggle.addEventListener('click', () => {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introducción">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
