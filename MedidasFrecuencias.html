@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introducción – Dengue</title>
+<title>3&nbsp; Medidas Frecuencias – Dengue</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Eda.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./Eda.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MedidasFrecuencias.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
@@ -161,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./MedidasFrecuencias.html" class="sidebar-item-text sidebar-link">
+  <a href="./MedidasFrecuencias.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></span></a>
   </div>
 </li>
@@ -182,15 +163,23 @@ document.addEventListener('DOMContentLoaded', function () {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#tasa-de-insidencia" id="toc-tasa-de-insidencia" class="nav-link active" data-scroll-target="#tasa-de-insidencia"><span class="header-section-number">3.1</span> Tasa de Insidencia</a></li>
+  <li><a href="#proporción-por-genero" id="toc-proporción-por-genero" class="nav-link" data-scroll-target="#proporción-por-genero"><span class="header-section-number">3.2</span> Proporción por Genero</a></li>
+  <li><a href="#razon" id="toc-razon" class="nav-link" data-scroll-target="#razon"><span class="header-section-number">3.3</span> Razon</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medidas Frecuencias</span></h1>
 </div>
 
 
@@ -207,32 +196,62 @@ document.addEventListener('DOMContentLoaded', function () {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
+<section id="tasa-de-insidencia" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="tasa-de-insidencia"><span class="header-section-number">3.1</span> Tasa de Insidencia</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--- CÁLCULO DE TASA ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Tasa de incidencia por 100,000 habitantes = 1.69 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="images/Dengue2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Mosquito Aedes aegypti</figcaption>
+<p><img src="MedidasFrecuencias_files/figure-html/tasa-incidencia-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
-<div style="text-align: justify;">
-<p>El dengue es una arbovirosis causada por el virus del dengue, transmitido principalmente por mosquitos del género <em>Aedes</em>, siendo una de las enfermedades virales de mayor impacto epidemiológico en regiones tropicales y subtropicales<span class="citation" data-cites="ins_lineamientos castrillon2015">(<a href="references.html#ref-ins_lineamientos" role="doc-biblioref">1</a>,<a href="references.html#ref-castrillon2015" role="doc-biblioref">2</a>)</span>. La expansión del dengue, resultado de factores ambientales, urbanísticos y sociales, lo ha convertido en un problema creciente para los sistemas de salud pública, con más de 100 países afectados y estimaciones globales que superan los 390 millones de infecciones anuales<span class="citation" data-cites="ins_lineamientos">(<a href="references.html#ref-ins_lineamientos" role="doc-biblioref">1</a>)</span>.</p>
-<p>En Colombia, el dengue constituye una de las principales causas de morbilidad en el sistema de salud, debido a la co-circulación de los cuatro serotipos virales (DENV-1, DENV-2, DENV-3, DENV-4), al clima cálido de extensas áreas y a condiciones que favorecen la proliferación del vector<span class="citation" data-cites="castrillon2015">(<a href="references.html#ref-castrillon2015" role="doc-biblioref">2</a>)</span>. El país ha experimentado repetidos brotes epidémicos en los últimos años, con incrementos en la incidencia notificados por el Sistema Nacional de Vigilancia en Salud Pública (SIVIGILA), el cual permite monitorear en tiempo real la situación epidemiológica y orientar las estrategias de prevención y control<span class="citation" data-cites="ins2020">(<a href="references.html#ref-ins2020" role="doc-biblioref">3</a>)</span>.</p>
-<p>Según el informe oficial del Instituto Nacional de Salud para el año 2020, a pesar de los desafíos adicionales derivados de la pandemia de COVID-19, se notificaron 108,729 casos sospechosos de dengue en el país, de los cuales 77,281 fueron confirmados y analizados tras la verificación de datos<span class="citation" data-cites="ins2020">(<a href="references.html#ref-ins2020" role="doc-biblioref">3</a>)</span>. La distribución de los casos fue: 49.2% para dengue sin signos de alarma (38,011 casos), 49.7% para dengue con signos de alarma (38,408 casos) y 1.1% para dengue grave (862 casos). Además, el año registró 180 muertes posiblemente asociadas al dengue y 1,361 casos de coinfección dengue-COVID-19, evidenciando la complejidad clínica y los retos para el diagnóstico diferencial en contextos de emergencia sanitaria<span class="citation" data-cites="ins2020">(<a href="references.html#ref-ins2020" role="doc-biblioref">3</a>)</span>.</p>
-<p>La persistencia del dengue en Colombia y la recurrencia de ciclos epidémicos subrayan la urgencia de fortalecer la vigilancia, optimizar la detección temprana y mejorar la respuesta sanitaria. Los factores determinantes del dengue en el país incluyen variables ambientales como la temperatura, precipitación, acceso al agua potable, urbanización y movilidad poblacional, además de las deficiencias en la implementación de políticas de control vectorial sostenidas<span class="citation" data-cites="ins_lineamientos castrillon2015">(<a href="references.html#ref-ins_lineamientos" role="doc-biblioref">1</a>,<a href="references.html#ref-castrillon2015" role="doc-biblioref">2</a>)</span>. El análisis de los datos de SIVIGILA 2020 es fundamental para comprender mejor la dinámica epidemiológica del dengue, identificar patrones y zonas de mayor vulnerabilidad, así como para proponer recomendaciones y pautas basadas en evidencia científica que orienten la toma de decisiones de salud pública<span class="citation" data-cites="ins2020">(<a href="references.html#ref-ins2020" role="doc-biblioref">3</a>)</span>.</p>
-<p>En ese contexto, el presente artículo tiene como objetivo principal analizar el comportamiento epidemiológico del dengue en Colombia durante el año 2020, a partir de la información suministrada por SIVIGILA, con la finalidad de aportar insumos técnicos para el fortalecimiento de las estrategias de prevención, promoción y control, y contribuir desde la investigación a la reducción del impacto sanitario y social del dengue en el país<span class="citation" data-cites="ins2020 ins_lineamientos castrillon2015">(<a href="references.html#ref-ins_lineamientos" role="doc-biblioref">1</a>–<a href="references.html#ref-ins2020" role="doc-biblioref">3</a>)</span>.</p>
+</div>
+</div>
+</section>
+<section id="proporción-por-genero" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="proporción-por-genero"><span class="header-section-number">3.2</span> Proporción por Genero</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--- CÁLCULO DE PROPORCIÓN ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Proporción de casos en mujeres = 53.8% </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MedidasFrecuencias_files/figure-html/proporcion-sexo-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="razon" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="razon"><span class="header-section-number">3.3</span> Razon</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--- CÁLCULO DE RAZÓN ---</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Razón de casos Hombres:Mujeres = 0.86 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MedidasFrecuencias_files/figure-html/razon-sexo-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
-<div id="refs" class="references csl-bib-body" role="list" style="display: none">
-<div id="ref-ins_lineamientos" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Instituto Nacional de Salud. Lineamientos de prevención y control de dengue en colombia [Internet]. 2020. Available from: <a href="https://www.ins.gov.co/buscador-eventos/Lineamientos/Pro_Dengue.pdf">https://www.ins.gov.co/buscador-eventos/Lineamientos/Pro_Dengue.pdf</a></div>
-</div>
-<div id="ref-castrillon2015" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Castrillón JC, otros. Dengue en colombia: Diez años de evolución. Biomédica [Internet]. 2015;35(Suppl 2):105–14. Available from: <a href="http://www.scielo.org.co/scielo.php?script=sci_arttext&amp;pid=S0120-41322015000600105">http://www.scielo.org.co/scielo.php?script=sci_arttext&amp;pid=S0120-41322015000600105</a></div>
-</div>
-<div id="ref-ins2020" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Instituto Nacional de Salud. Informe de evento: Dengue colombia 2020 [Internet]. Instituto Nacional de Salud, Colombia; 2021. Available from: <a href="https://www.ins.gov.co/buscador-eventos/Informesdeevento/DENGUE_2020.pdf">https://www.ins.gov.co/buscador-eventos/Informesdeevento/DENGUE_2020.pdf</a></div>
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 
@@ -718,13 +737,13 @@ toggle.addEventListener('click', () => {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./Eda.html" class="pagination-link" aria-label="Análisis Exploratorio de Datos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Eda.html" class="pagination-link" aria-label="Análisis Exploratorio de Datos">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Análisis Exploratorio de Datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

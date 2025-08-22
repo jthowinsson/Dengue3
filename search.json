@@ -50,13 +50,43 @@
     ]
   },
   {
+    "objectID": "MedidasFrecuencias.html",
+    "href": "MedidasFrecuencias.html",
+    "title": "3  Medidas Frecuencias",
+    "section": "",
+    "text": "3.1 Tasa de Insidencia\n--- CÁLCULO DE TASA ---\n\n\nTasa de incidencia por 100,000 habitantes = 1.69",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+    ]
+  },
+  {
+    "objectID": "MedidasFrecuencias.html#proporción-por-genero",
+    "href": "MedidasFrecuencias.html#proporción-por-genero",
+    "title": "3  Medidas Frecuencias",
+    "section": "3.2 Proporción por Genero",
+    "text": "3.2 Proporción por Genero\n\n\n--- CÁLCULO DE PROPORCIÓN ---\n\n\nProporción de casos en mujeres = 53.8%",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+    ]
+  },
+  {
+    "objectID": "MedidasFrecuencias.html#razon",
+    "href": "MedidasFrecuencias.html#razon",
+    "title": "3  Medidas Frecuencias",
+    "section": "3.3 Razon",
+    "text": "3.3 Razon\n\n\n--- CÁLCULO DE RAZÓN ---\n\n\nRazón de casos Hombres:Mujeres = 0.86",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medidas Frecuencias</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
     ]
   },
   {
